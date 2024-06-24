@@ -1,3 +1,4 @@
+import 'dotenv/config'; // This should be at the very top
 import express from 'express';
 import bodyParser from 'body-parser';
 import { AppDataSource } from './config/database';

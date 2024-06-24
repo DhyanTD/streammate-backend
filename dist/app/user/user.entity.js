@@ -39,16 +39,19 @@ const typeorm_1 = require("typeorm");
  *           description: A brief bio of the user
  */
 let User = class User {
+    // The constructor parameter is made optional by adding the '?'.
     constructor(it) {
-        if (it.id) {
-            this.id = it.id;
+        // Added checks to ensure 'it' is defined before accessing its properties.
+        if (it) {
+            if (it.id)
+                this.id = it.id;
+            this.name = it.name;
+            this.userName = it.userName;
+            this.email = it.email;
+            this.password = it.password;
+            this.avatar = it.avatar;
+            this.bio = it.bio;
         }
-        this.name = it.name;
-        this.userName = it.userName;
-        this.email = it.email;
-        this.password = it.password;
-        this.avatar = it.avatar;
-        this.bio = it.bio;
     }
 };
 exports.User = User;
